@@ -21,7 +21,7 @@ class GamesController < ApplicationController
 
   def score
     @grid = params[:grid]
-    @answer = params[:word]
+    @answer = params[:word].upcase
     grid_letters = @grid.each_char { |letter| print letter, '' }
     if !letter_in_grid
       @result = "Sorry, but #{@answer.upcase} can’t be built out of #{grid_letters}."
